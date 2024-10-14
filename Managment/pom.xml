@@ -14,7 +14,13 @@
         <flatlaf.version>2.2</flatlaf.version> <!-- Check for latest version -->
         <kotlin.version>2.0.21</kotlin.version>
     </properties>
-
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/OWNER/REPOSITORY</url>
+        </repository>
+    </distributionManagement>
     <dependencies>
         <dependency>
             <groupId>com.formdev</groupId>
@@ -119,5 +125,6 @@
                 </configuration>
             </plugin>
         </plugins>
+
     </build>
 </project>
