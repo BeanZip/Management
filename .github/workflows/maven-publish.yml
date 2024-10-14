@@ -28,8 +28,8 @@ jobs:
             <servers>
               <server>
                 <id>github</id>
-                <username>YOUR_GITHUB_USERNAME</username>
-                <password=${{ secrets.GITHUB_TOKEN }} />
+                <username>${{ github.actor }}</username>
+                <password=${{ secrets.token }} />
               </server>
             </servers>
           </settings>" > $GITHUB_WORKSPACE/settings.xml
@@ -39,5 +39,3 @@ jobs:
 
       - name: Publish to GitHub Packages Apache Maven
         run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
