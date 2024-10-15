@@ -6,6 +6,8 @@ public class Inventory extends Menu {
 
     public Inventory(String title) {
         super(title);
+        setupMenu();
+        setupThemeMenu();
         setupInventoryMenu();
         activate(); // Show the window
     }
